@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GEDCOMConverter_Example' do
+  pod 'GEDCOMConverter', :path => '../'
+
+  target 'GEDCOMConverter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
