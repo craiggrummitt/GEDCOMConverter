@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GEDCOMConverter'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of GEDCOMConverter.'
+  s.summary          = 'With GEDCOMConverter, parsing a GEDCOM file to native Swift objects is too easy!'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +18,24 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+With GEDCOMConverter, parsing a GEDCOM file to native Swift objects is too easy!
+
+Just create a `GEDCOM` object, passing in the name of your GEDCOM file:
+```
+let gedcom = try GEDCOM(fileName:"sample")
+```
+
+The `GEDCOM` object will automatically generate a `head`, and `individuals`, `families` and `sour` arrays of data.
                        DESC
 
-  s.homepage         = 'https://github.com/iosappdevelopmentwithswift@gmail.com/GEDCOMConverter'
+  s.homepage         = 'https://github.com/craiggrummitt/GEDCOMConverter'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'iosappdevelopmentwithswift@gmail.com' => 'craiggrummitt@gmail.com' }
-  s.source           = { :git => 'https://github.com/iosappdevelopmentwithswift@gmail.com/GEDCOMConverter.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Craig Grummitt' => 'craiggrummitt@gmail.com' }
+  s.source           = { :git => 'https://github.com/craiggrummitt/GEDCOMConverter.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/craiggrummitt'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'GEDCOMConverter/Classes/**/*'
   
