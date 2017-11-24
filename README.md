@@ -1,11 +1,9 @@
-# GEDCOMConverter
+![GEDCOMConverter: With GEDCOMConverter, parsing a GEDCOM file to native Swift objects is too easy! ](GEDCOMConverter.png)
 
 [![CI Status](http://img.shields.io/travis/iosappdevelopmentwithswift@gmail.com/GEDCOMConverter.svg?style=flat)](https://travis-ci.org/iosappdevelopmentwithswift@gmail.com/GEDCOMConverter)
 [![Version](https://img.shields.io/cocoapods/v/GEDCOMConverter.svg?style=flat)](http://cocoapods.org/pods/GEDCOMConverter)
 [![License](https://img.shields.io/cocoapods/l/GEDCOMConverter.svg?style=flat)](http://cocoapods.org/pods/GEDCOMConverter)
 [![Platform](https://img.shields.io/cocoapods/p/GEDCOMConverter.svg?style=flat)](http://cocoapods.org/pods/GEDCOMConverter)
-
-With GEDCOMConverter, parsing a GEDCOM file to native Swift objects is too easy!
 
 Just create a `GEDCOM` object, passing in the name of your GEDCOM file:
 ```
