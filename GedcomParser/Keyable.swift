@@ -11,8 +11,8 @@ public struct KeyObject {
   public var gedcomKey:String
 }
 public protocol Keyable {
-  public var keys:[KeyObject] {get set}
-  public var unparsedData:[String:Any] {get set}
+  var keys:[KeyObject] {get set}
+  var unparsedData:[String:Any] {get set}
 }
 public extension Keyable {
   public func initKeys<T>(_ instance:inout T, with data:[String:Any], from keys:[KeyObject]) {

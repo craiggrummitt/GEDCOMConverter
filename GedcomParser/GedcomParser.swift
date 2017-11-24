@@ -10,40 +10,7 @@ import Foundation
 
 
 public let q = "?"
-public enum Type:String {
-  //head
-  case head
-  case sour
-  case name
-  case vers
-  case date
-  case gedc
-  case form
-  case char
-  case subm
-  //indi
-  case sex
-  case fams
-  case famc
-  //fam
-  case husb
-  case wife
-  case marr
-  case chil
-  //submitter
-  case trlr
-  //unknown
-  case unknown
-  
-  public init(_ typeText:String) {
-    if let type = Type(rawValue:typeText.lowercased()) {
-      self = type
-    } else {
-      print("Unknown line: \(typeText)")
-      self = .unknown
-    }
-  }
-}
+
 //0 @I1@ INDI
 public struct Line {
   public var level:Int
@@ -87,17 +54,6 @@ public struct Line {
 }
 
 public struct GedcomParser {
-  /*public static func getData(for level:Int, and type:Type, from line:Line?)->String? {
-    guard let line = line else {return nil}
-    if line.level == level && line.type == type {
-      return line.data
-    }
-    return nil
-  }
-  public static func isLevel(_ level:Int, and type:Type, from line:Line?)->Bool {
-    guard let line = line else {return false}
-    return line.level == level && line.type == type
-  }*/
   public static func getAllData(atOrAbove level:Int,
                                 from lines:inout [Line],
                                 with property:[String:Any]? = nil)->[String:Any] {
