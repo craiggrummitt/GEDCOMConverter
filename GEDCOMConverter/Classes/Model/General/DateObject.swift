@@ -18,19 +18,19 @@ public struct DateObject:CustomStringConvertible {
   }
 }
 //https://stackoverflow.com/a/32595941/3220708
-extension String {
+public extension String {
   var nsString: NSString { return self as NSString }
   var length: Int { return nsString.length }
   var nsRange: NSRange { return NSRange(location: 0, length: length) }
-  var detectDates: [Date]? {
+  public var detectDates: [Date]? {
     return try? NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
       .matches(in: self, range: nsRange)
       .flatMap{$0.date}
   }
 }
 
-extension Collection where Iterator.Element == String {
-  var dates: [Date] {
+public extension Collection where Iterator.Element == String {
+  public var dates: [Date] {
     return flatMap{$0.detectDates}.flatMap{$0}
   }
 }

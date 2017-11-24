@@ -7,15 +7,15 @@
 
 import Foundation
 public struct KeyObject {
-  var keyPath:AnyKeyPath
-  var gedcomKey:String
+  public var keyPath:AnyKeyPath
+  public var gedcomKey:String
 }
 public protocol Keyable {
-  var keys:[KeyObject] {get set}
-  var unparsedData:[String:Any] {get set}
+  public var keys:[KeyObject] {get set}
+  public var unparsedData:[String:Any] {get set}
 }
 public extension Keyable {
-  func initKeys<T>(_ instance:inout T, with data:[String:Any], from keys:[KeyObject]) {
+  public func initKeys<T>(_ instance:inout T, with data:[String:Any], from keys:[KeyObject]) {
     var data:[String:Any] = data
     for key in keys {
       if let keyPath = key.keyPath as?  WritableKeyPath<T, String?> {

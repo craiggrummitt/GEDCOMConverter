@@ -9,7 +9,7 @@ import Foundation
 
 
 
-let q = "?"
+public let q = "?"
 public enum Type:String {
   //head
   case head
@@ -46,9 +46,9 @@ public enum Type:String {
 }
 //0 @I1@ INDI
 public struct Line {
-  var level:Int
-  var type = ""
-  var data = ""
+  public var level:Int
+  public var type = ""
+  public var data = ""
   public init?(_ lineText:String) {
     //level
     guard let level = Int(lineText.prefix(1)) else {return nil}
