@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct Child:Keyable, CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Child:Keyable, Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Child.id, gedcomKey: "ROOT"),
     KeyObject(keyPath: \Child.fatherRelationship, gedcomKey: "_FREL"),
     KeyObject(keyPath: \Child.motherRelationship, gedcomKey: "_MREL")
@@ -18,7 +18,7 @@ public struct Child:Keyable, CustomStringConvertible {
   public var fatherRelationship:String?
   public var motherRelationship:String?
   public init(_ data:[String:Any]) {
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   public var description: String {
     return ("Child:   Name: \(id ?? q)")

@@ -6,9 +6,9 @@
 //
 
 import Foundation
-public struct Head:Keyable, CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Head:Keyable, Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Head.sour, gedcomKey: "SOUR"),
     KeyObject(keyPath: \Head.date, gedcomKey: "DATE"),
     KeyObject(keyPath: \Head.gedc, gedcomKey: "GEDC"),
@@ -21,7 +21,7 @@ public struct Head:Keyable, CustomStringConvertible {
   public var char:String?
   public var submitter:String?
   public init(_ data:[String:Any]) {
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   public var description: String {
     return ("Head: sour: \(sour?.description ?? q), Date: \(date?.description ?? q), Gedc: \(gedc?.description ?? q), Char: \(char ?? q), Submitter: \(submitter ?? q)")

@@ -6,14 +6,14 @@
 //
 
 import Foundation
-public struct Data:Keyable,CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Data:Keyable,Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Data.text, gedcomKey: "TEXT")
   ]
   public var text:String?
   public init(_ data:[String:Any]) {
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   public var description: String {
     return ("Data: \(text ?? q)")

@@ -6,9 +6,9 @@
 //
 
 import Foundation
-public struct Object:Keyable,CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Object:Keyable,Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Object.file, gedcomKey: "FILE"),
     KeyObject(keyPath: \Object.form, gedcomKey: "FORM"),
     KeyObject(keyPath: \Object.title, gedcomKey: "TITL")
@@ -17,7 +17,7 @@ public struct Object:Keyable,CustomStringConvertible {
   public var form:String?
   public var title:String?
   public init(_ data:[String:Any]) {
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   public var description: String {
     return ("Object: Title: \(title ?? q) file: \(file ?? q), Form: \(form ?? q)")

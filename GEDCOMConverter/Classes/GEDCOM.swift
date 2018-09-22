@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public class GEDCOM {
+public class GEDCOM:Codable {
   public var head:Head?
   public var individuals:[Individual] = []
   public var families:[Family] = []
@@ -17,7 +17,7 @@ public class GEDCOM {
     //break apart content into lines of text
     let linesAsStrings = content.components(separatedBy: .newlines).filter({$0 != ""})
     //convert to lines of level(Int),type(String) and data(String)
-    let lines = linesAsStrings.flatMap({Line($0)})
+    let lines = linesAsStrings.compactMap({Line($0)})
     var linesCopy = lines
     //convert to multi-dimensional arrays/dictionaries of String
     let data = GedcomParser.getAllData(atOrAbove: 0, from: &linesCopy)
@@ -30,7 +30,8 @@ public class GEDCOM {
     individuals = []
     for line in individualLines {
       if let individualData = line.value as? [String:Any] {
-        individuals.append(Individual(individualData,for:line.key))
+        let individual = Individual(individualData,for:line.key)
+        individuals.append(individual)
       }
     }
     //individuals.forEach{print($0)}

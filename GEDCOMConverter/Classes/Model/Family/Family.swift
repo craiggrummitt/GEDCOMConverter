@@ -7,16 +7,16 @@
 
 import Foundation
 
-public struct Family:Keyable,CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Family:Keyable, Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Family.husband, gedcomKey: "HUSB"),
     KeyObject(keyPath: \Family.wife, gedcomKey: "WIFE"),
     KeyObject(keyPath: \Family.children, gedcomKey: "CHIL"),
     KeyObject(keyPath: \Family.marriage, gedcomKey: "MARR"),
     KeyObject(keyPath: \Family.root, gedcomKey: "ROOT"),
     KeyObject(keyPath: \Family.divorced, gedcomKey: "DIV"),
-  ]
+    ]
   public var id:String?
   public var husband:String?
   public var wife:String?
@@ -26,7 +26,7 @@ public struct Family:Keyable,CustomStringConvertible {
   public var root:String?
   public init(_ data:[String:Any], for id:String) {
     self.id = id
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   public var description: String {
     let q = "?"

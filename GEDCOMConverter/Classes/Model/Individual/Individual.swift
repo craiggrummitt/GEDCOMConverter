@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct Individual:Keyable,CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Individual:Keyable,Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Individual.name, gedcomKey: "NAME"),
     KeyObject(keyPath: \Individual.sex, gedcomKey: "SEX"),
     KeyObject(keyPath: \Individual.birthday, gedcomKey: "BIRT"),
@@ -44,8 +44,8 @@ public struct Individual:Keyable,CustomStringConvertible {
   public var rin:String?
   public var occu:String?
   public var note:String?
-  public var object:Object?
-  public var residence:Event?
+  public var object:[Object] = []
+  public var residence:[Event] = []
   public var event:[Event] = []
   public var married:Event?
   public var sour:Sour?
@@ -60,7 +60,10 @@ public struct Individual:Keyable,CustomStringConvertible {
   public var root:String?
   public init(_ data:[String:Any], for id:String) {
     self.id = id
-    self.initKeys(&self, with: data, from:keys)
+    if id == "P1574" {
+      print("STOP HERE")
+    }
+    self.initKeys(with: data)
   }
   public var description: String {
     let q = "?"

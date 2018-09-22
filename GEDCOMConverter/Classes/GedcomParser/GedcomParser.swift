@@ -66,16 +66,46 @@ public struct GedcomParser {
       lines.removeFirst()
       
       if lines.count>0 && lines[0].level == level + 1 {
+        var dataToSet:[String:Any]
+        //this is a multi-line property
         if line.data != "" {
-          data[line.type] = getAllData(atOrAbove: level+1, from: &lines, with: ["ROOT":line.data])
+          //the data of the root line contains something
+          dataToSet = getAllData(atOrAbove: level+1, from: &lines, with: ["ROOT":line.data])
         } else {
-          data[line.type] = getAllData(atOrAbove: level+1, from: &lines)
+          //the data of the root line contains nothing
+          dataToSet = getAllData(atOrAbove: level+1, from: &lines)
         }
+        setDictionary(data: &data, with: line.type, to: dataToSet)
       } else {
-        data[line.type] = line.data
+        //this is a single-line property, set to String
+        setDictionary(data: &data, with: line.type, to: line.data)
       }
+      
+      /*
+       //Turn data into array of data if it already exists
+       if data[line.type] == nil {
+       data[line.type] = dataToSet
+       } else {
+       var array = [data[line.type]]
+       array.append(dataToSet)
+       print(array)
+       data[line.type] = array
+       }*/
     }
     return data
+  }
+  public static func setDictionary<T>(data:inout [String:Any], with property:String, to dataToSet:T) {
+    //Turn data into array of data if it already exists
+    if data[property] == nil {
+      data[property] = dataToSet
+    } else if let oldData = data[property] as? T {
+      var array:[T] = [oldData]
+      array.append(dataToSet)
+      data[property] = array
+    } else if var array = data[property] as? [T] {
+      array.append(dataToSet)
+      data[property] = array
+    }
   }
 }
 

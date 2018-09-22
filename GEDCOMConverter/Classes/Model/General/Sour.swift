@@ -6,9 +6,9 @@
 //
 
 import Foundation
-public struct Sour:Keyable, CustomStringConvertible {
-  public var unparsedData:[String:Any] = [:]
-  public var keys = [
+public class Sour:Keyable, Codable, CustomStringConvertible {
+  //public var unparsedData:[String:Any] = [:]
+  public static let keys = [
     KeyObject(keyPath: \Sour.name, gedcomKey: "NAME"),
     KeyObject(keyPath: \Sour.version, gedcomKey: "VERS"),
     KeyObject(keyPath: \Sour.corp, gedcomKey: "CORP"),
@@ -25,7 +25,7 @@ public struct Sour:Keyable, CustomStringConvertible {
     KeyObject(keyPath: \Sour.auth, gedcomKey: "AUTH"),
     KeyObject(keyPath: \Sour.publ, gedcomKey: "PUBL"),
     KeyObject(keyPath: \Sour.repo, gedcomKey: "REPO"),
-  ]
+    ]
   public var root:String?
   public var name:String?
   public var version:String?
@@ -45,7 +45,7 @@ public struct Sour:Keyable, CustomStringConvertible {
   //for non - 0 based SOUR eg.
   //1 SOUR @S-2126195860@
   public init(_ data:[String:Any]) {
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   //for 0 based SOUR eg.
   //0 @S205747489@ SOUR
@@ -53,7 +53,7 @@ public struct Sour:Keyable, CustomStringConvertible {
     self.root = id
     var data = data
     data.removeValue(forKey: "ROOT")
-    self.initKeys(&self, with: data, from:keys)
+    self.initKeys(with: data)
   }
   public var description: String {
     return ("Sour:   Name: \(name ?? q), version: \(version ?? q)")

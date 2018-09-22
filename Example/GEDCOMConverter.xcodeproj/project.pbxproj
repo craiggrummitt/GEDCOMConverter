@@ -12,6 +12,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		B949919B1FD2CD610003693B /* TestDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B949919A1FD2CD610003693B /* TestDates.swift */; };
 		B9EBDB551FC30814006B8966 /* sample.ged in Resources */ = {isa = PBXBuildFile; fileRef = B9EBDB481FC1B50A006B8966 /* sample.ged */; };
 		B9F7D77C1FC78A6E00FB57E4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7D77B1FC78A6E00FB57E4 /* TableViewController.swift */; };
 		B9F7D77D1FC8413200FB57E4 /* sample.ged in Resources */ = {isa = PBXBuildFile; fileRef = B9EBDB481FC1B50A006B8966 /* sample.ged */; };
@@ -47,6 +48,8 @@
 		9F17100E1A47F6AD29A92B63 /* Pods-GEDCOMConverter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEDCOMConverter_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEDCOMConverter_Tests/Pods-GEDCOMConverter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A09D7E3825DD84FEAA402D2A /* Pods-GEDCOMConverter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEDCOMConverter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEDCOMConverter_Example/Pods-GEDCOMConverter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B42513B730521435EA1A0EBC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B949919A1FD2CD610003693B /* TestDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDates.swift; sourceTree = "<group>"; };
+		B949919D1FD2DF440003693B /* Pods_GEDCOMConverter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GEDCOMConverter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EBDB481FC1B50A006B8966 /* sample.ged */ = {isa = PBXFileReference; lastKnownFileType = text; path = sample.ged; sourceTree = "<group>"; };
 		B9F7D77B1FC78A6E00FB57E4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BBC21DBEA4FFE0E87770D384 /* Pods-GEDCOMConverter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEDCOMConverter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEDCOMConverter_Tests/Pods-GEDCOMConverter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		247C4E042D9CBC781CA4EBF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B949919D1FD2DF440003693B /* Pods_GEDCOMConverter_Example.framework */,
 				7E3037DFCBEF0F4B5D64A00B /* Pods_GEDCOMConverter_Example.framework */,
 				593790DF7DF245A1EBDA3CF3 /* Pods_GEDCOMConverter_Tests.framework */,
 			);
@@ -128,6 +132,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				B949919A1FD2CD610003693B /* TestDates.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -222,19 +227,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 5M6U4VTSB8;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 5M6U4VTSB8;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -372,12 +377,12 @@
 			files = (
 			);
 			inputPaths = (
-				"",
-				"",
+				"${SRCROOT}/Pods/Target Support Files/Pods-GEDCOMConverter_Tests/Pods-GEDCOMConverter_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GEDCOMConverter/GEDCOMConverter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GEDCOMConverter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -401,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				B949919B1FD2CD610003693B /* TestDates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +452,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -499,12 +507,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -547,8 +557,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -566,8 +576,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -591,8 +601,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -612,8 +621,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
