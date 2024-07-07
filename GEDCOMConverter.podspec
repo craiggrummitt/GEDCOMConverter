@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GEDCOMConverter'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'With GEDCOMConverter, parsing a GEDCOM file to native Swift objects is too easy!'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ The `GEDCOM` object will automatically generate a `head`, and `individuals`, `fa
 
   s.ios.deployment_target = '9.3'
 
-  s.source_files = 'GEDCOMConverter/Classes/**/*'
+  s.source_files = 'Sources/GEDCOMConverter/Classes/**/*'
   
   # s.resource_bundles = {
   #   'GEDCOMConverter' => ['GEDCOMConverter/Assets/*.png']

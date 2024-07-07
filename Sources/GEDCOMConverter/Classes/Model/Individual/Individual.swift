@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class Individual:Keyable,Codable, CustomStringConvertible {
-  //public var unparsedData:[String:Any] = [:]
+public class Individual: Keyable, Codable, CustomStringConvertible {
+  // public var unparsedData:[String:Any] = [:]
   public static let keys = [
     KeyObject(keyPath: \Individual.name, gedcomKey: "NAME"),
     KeyObject(keyPath: \Individual.sex, gedcomKey: "SEX"),
@@ -34,31 +34,31 @@ public class Individual:Keyable,Codable, CustomStringConvertible {
     KeyObject(keyPath: \Individual.root, gedcomKey: "ROOT"),
     KeyObject(keyPath: \Individual.emigration, gedcomKey: "EMIG")
   ]
-  public var id:String?
-  public var name:String?
-  public var sex:String?
-  public var birthday:Event?
-  public var death:Event?
-  public var fams:String?    //spouse family
-  public var famc:String?    //child of family
-  public var rin:String?
-  public var occu:String?
-  public var note:String?
-  public var object:[Object] = []
-  public var residence:[Event] = []
-  public var event:[Event] = []
-  public var married:Event?
-  public var sour:Sour?
-  public var burial:Event?
-  public var christening:Event?
-  public var cremated:Event?
-  public var baptism:Event?
-  public var destination:Event?
-  public var mdcl:String?
-  public var immigration:Event?
-  public var emigration:Event?
-  public var root:String?
-  public init(_ data:[String:Any], for id:String) {
+  public var id: String?
+  public var name: String?
+  public var sex: String?
+  public var birthday: Event?
+  public var death: Event?
+  public var fams: String?    // spouse family
+  public var famc: String?    // child of family
+  public var rin: String?
+  public var occu: String?
+  public var note: String?
+  public var object: [Object] = []
+  public var residence: [Event] = []
+  public var event: [Event] = []
+  public var married: Event?
+  public var sour: Sour?
+  public var burial: Event?
+  public var christening: Event?
+  public var cremated: Event?
+  public var baptism: Event?
+  public var destination: Event?
+  public var mdcl: String?
+  public var immigration: Event?
+  public var emigration: Event?
+  public var root: String?
+  public init(_ data: [String: Any], for id: String) {
     self.id = id
     if id == "P1574" {
       print("STOP HERE")

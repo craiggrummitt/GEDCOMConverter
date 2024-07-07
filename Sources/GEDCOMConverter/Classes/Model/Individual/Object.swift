@@ -6,17 +6,17 @@
 //
 
 import Foundation
-public class Object:Keyable,Codable, CustomStringConvertible {
-  //public var unparsedData:[String:Any] = [:]
+public class Object: Keyable, Codable, CustomStringConvertible {
+  // public var unparsedData:[String:Any] = [:]
   public static let keys = [
     KeyObject(keyPath: \Object.file, gedcomKey: "FILE"),
     KeyObject(keyPath: \Object.form, gedcomKey: "FORM"),
     KeyObject(keyPath: \Object.title, gedcomKey: "TITL")
   ]
-  public var file:String?
-  public var form:String?
-  public var title:String?
-  public init(_ data:[String:Any]) {
+  public var file: String?
+  public var form: String?
+  public var title: String?
+  public init(_ data: [String: Any]) {
     self.initKeys(with: data)
   }
   public var description: String {
@@ -29,7 +29,7 @@ public class Object:Keyable,Codable, CustomStringConvertible {
      //https://mediasvc.ancestry.com/v2/image/namespaces/1093/media/1e1d842f-8619-4569-b320-f745ace26f19.jpg?client=Trees&imageQuality=hq
      //See: https://support.ancestry.com/s/question/0D515000021Ob3rCAC/getting-images-via-ancestrycom-gedcom-files
   **/
-  public var url:URL? {
+  public var url: URL? {
     guard let file = file,
       let fileUrlComponents = URLComponents(string: file),
       let fileQueryItems = fileUrlComponents.queryItems,
